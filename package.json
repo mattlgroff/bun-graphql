@@ -1,15 +1,16 @@
 {
-  "name": "buntest",
+  "name": "bun-graphql",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Bun GraphQL Server powered by Hono.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "bun index.js"
+    "start": "bun src/index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Matthew Groff",
+  "license": "MIT",
   "dependencies": {
     "@honojs/graphql-server": "^0.0.3",
+    "apollo-server-micro": "^3.10.0",
     "graphql": "^16.5.0",
     "hono": "^2.0.5"
   }
