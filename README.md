@@ -5,7 +5,7 @@ I wrote an article about making a graphql server with bun [here](https://groff.d
 ## Run Instructions
 ```bash
 bun install
-bun index.js
+bun src/index.js
 ```
 
 The GraphQL Server should be running on the environment variable `PORT` or `3000` if not set.
