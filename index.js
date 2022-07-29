@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 import { graphqlServer } from '@honojs/graphql-server'
-import { buildSchema } from 'graphql'
+import { buildSchema } from 'graphql/utilities/buildASTSchema.js';
 
 export const app = new Hono()
 
@@ -22,8 +22,6 @@ app.use(
     rootValue,
   })
 )
-
-app.get('/', (c) => c.text('Please use /graphql'))
 
 export default {
   port: process.env.PORT || 3000,
