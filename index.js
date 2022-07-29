@@ -15,7 +15,7 @@ const rootValue = {
 }
 
 
-app.post(
+app.use(
   '/graphql',
   graphqlServer({
     schema,
