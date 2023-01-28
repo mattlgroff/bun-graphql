@@ -5,11 +5,9 @@ import playgroundHTML from './utils/playground';
 
 export const app = new Hono();
 
-const schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`);
+const schema = buildSchema(
+  Bun.readFile("./src/schema.graphql")
+);
 
 const rootResolver = (ctx) => {
   return {
@@ -38,7 +36,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 
-console.log(`🥟 Listening on port ${port}`);
+console.log(`Hono 🥟 GraphQL Server Listening on port ${port}`);
 
 export default {
   port,
