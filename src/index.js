@@ -11,9 +11,11 @@ const schema = buildSchema(`
   }
 `);
 
-const rootValue = {
-  hello: () => 'Hello Hono!',
-};
+const rootResolver = (ctx) => {
+  return {
+    hello: () => 'Hello Hono!',
+  }
+}
 
 // Adds GraphQL Playground to baseEndpoint
 app.get('/', () => {
@@ -29,7 +31,7 @@ app.use(
   '/graphql',
   graphqlServer({
     schema,
-    rootValue,
+    rootResolver,
   })
 );
 
